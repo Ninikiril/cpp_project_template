@@ -1,9 +1,9 @@
 {
     "cmake.generator": "Ninja",
     "cmake.configureOnEdit": true,
-    "cmake.sourceDirectory": "C:/code/cpp_project_22271706112024",
-    "cmake.buildDirectory": "${PROJECT_SOURCE_DIR}/build",
-    "cmake.installPrefix": "${PROJECT_SOURCE_DIR}/install",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86",
+    "cmake.installPrefix": "${workspaceFolder}/install/Visual Studio Community 2022 Release - amd64_x86",
     "cmake.buildArgs": [],
     "cmake.ctestArgs": [],
     "cmake.cpackArgs": [],

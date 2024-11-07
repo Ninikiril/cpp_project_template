@@ -1,45 +1,92 @@
 {
     "configurations": [
         {
-            "name": "RelwDeb Launch",
+            "name": "Debug App Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${PROJECT_SOURCE_DIR}/build/RelWithDebInfo/cpp_project_name.exe",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/apps/Debug/app.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${PROJECT_SOURCE_DIR}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal"
         },
         {
-            "name": "Release Launch",
+            "name": "Debug Tests Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${PROJECT_SOURCE_DIR}/build/Release/cpp_project_name.exe",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/tests/Debug/testlib.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${PROJECT_SOURCE_DIR}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal"
         },
         {
-            "name": "Debug Launch",
+            "name": "Release App Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${PROJECT_SOURCE_DIR}/build/Debug/cpp_project_name.exe",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/apps/Release/app.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${PROJECT_SOURCE_DIR}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "externalTerminal"
         },
         {
-            "type": "cmake",
+            "name": "Release Tests Launch",
+            "type": "cppvsdbg",
             "request": "launch",
-            "name": "Debug portfile(s)",
-            "cmakeDebugType": "external",
-            "pipeName": "\\\\.\\pipe\\vcpkg_ext_portfile_dbg",
-            "preLaunchTask": "Debug vcpkg commands"
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/tests/Release/testlib.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "RelWithDebInfo App Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/apps/RelWithDebInfo/app.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "RelWithDebInfo Tests Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/tests/RelWithDebInfo/testlib.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "MinSizeRel App Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/apps/MinSizeRel/app.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "MinSizeRel Tests Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Visual Studio Community 2022 Release - amd64_x86/tests/MinSizeRel/testlib.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "externalTerminal"
         }
     ]
 }
