@@ -1,5 +1,6 @@
 #include <test_lib/lib.hpp>
 #include <vector>
+#include <fmt/core.h>
 
 int main() {
     std::vector<float> input = {1.2, 2.3, 3.4, 4.5};
@@ -7,10 +8,8 @@ int main() {
     for(size_t i = 0; i < input.size(); ++i) {
         output[i] = Q_rsqrt(input[i]);
     }
-    printf("Output: ");
-    for(auto& o : output) {
-        printf("%f ", o);
+    for(const auto& val : output) {
+        fmt::print("{}\n", val);
     }
-
     return 0;
 }

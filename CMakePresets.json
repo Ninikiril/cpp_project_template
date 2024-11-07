@@ -1,45 +1,47 @@
 {
-    "version": 8,
+    "version": 2,
     "configurePresets": [
         {
-            "name": "Visual Studio Community 2022 Release - amd64_x86",
-            "displayName": "VSC_2022_64_86",
-            "description": "Using compilers for Visual Studio 17 2022 (x64_x86 architecture)",
+            "name": "VSC2022-x64",
+            "displayName": "VSC2022-x64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Visual Studio 17 2022",
             "toolset": "host=x64",
-            "architecture": "win32",
-            "binaryDir": "${workspaceFolder}/build/${presetName}",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET": "x64-windows",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe",
+                "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe"
             }
         }
     ],
     "buildPresets": [
         {
-            "name": "Visual Studio Community 2022 Release - amd64_x86-debug",
-            "displayName": "Debug-VSC_2022_64_86",
-            "configurePreset": "Visual Studio Community 2022 Release - amd64_x86",
+            "name": "Debug",
+            "displayName": "Visual Studio Community 2022 Release - amd64 - Debug",
+            "configurePreset": "VSC2022-x64",
             "configuration": "Debug"
         },
         {
-            "name": "Visual Studio Community 2022 Release - amd64_x86-release",
-            "displayName": "Release-VSC_2022_64_86",
-            "configurePreset": "Visual Studio Community 2022 Release - amd64_x86",
+            "name": "Release",
+            "displayName": "Visual Studio Community 2022 Release - amd64 - Release",
+            "configurePreset": "VSC2022-x64",
             "configuration": "Release"
         },
         {
-            "name": "Visual Studio Community 2022 Release - amd64_x86-relwithdebinfo",
-            "displayName": "RelWithDebInfo-VSC_2022_64_86",
-            "configurePreset": "Visual Studio Community 2022 Release - amd64_x86",
-            "configuration": "RelWithDebInfo"
+            "name": "MinSizeRel",
+            "displayName": "Visual Studio Community 2022 Release - amd64 - MinSizeRel",
+            "configurePreset": "VSC2022-x64",
+            "configuration": "MinSizeRel"
         },
         {
-            "name": "Visual Studio Community 2022 Release - amd64_x86-minsize",
-            "displayName": "MinSizeRel-VSC_2022_64_86",
-            "configurePreset": "Visual Studio Community 2022 Release - amd64_x86",
-            "configuration": "MinSizeRel"
+            "name": "RelWithDebInfo",
+            "displayName": "Visual Studio Community 2022 Release - amd64 - RelWithDebInfo",
+            "configurePreset": "VSC2022-x64",
+            "configuration": "RelWithDebInfo"
         }
     ]
 }
