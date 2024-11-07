@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "name": "RelwDeb Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${PROJECT_SOURCE_DIR}/build/RelWithDebInfo/cpp_project_name.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${PROJECT_SOURCE_DIR}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Release Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${PROJECT_SOURCE_DIR}/build/Release/cpp_project_name.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${PROJECT_SOURCE_DIR}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Debug Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${PROJECT_SOURCE_DIR}/build/Debug/cpp_project_name.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${PROJECT_SOURCE_DIR}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        {
+            "type": "cmake",
+            "request": "launch",
+            "name": "Debug portfile(s)",
+            "cmakeDebugType": "external",
+            "pipeName": "\\\\.\\pipe\\vcpkg_ext_portfile_dbg",
+            "preLaunchTask": "Debug vcpkg commands"
+        }
+    ]
+}
