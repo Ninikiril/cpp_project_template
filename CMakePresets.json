@@ -17,31 +17,5 @@
                 "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe"
             }
         }
-    ],
-    "buildPresets": [
-        {
-            "name": "Debug",
-            "displayName": "Visual Studio Community 2022 Release - amd64 - Debug",
-            "configurePreset": "VSC2022-x64",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Release",
-            "displayName": "Visual Studio Community 2022 Release - amd64 - Release",
-            "configurePreset": "VSC2022-x64",
-            "configuration": "Release"
-        },
-        {
-            "name": "MinSizeRel",
-            "displayName": "Visual Studio Community 2022 Release - amd64 - MinSizeRel",
-            "configurePreset": "VSC2022-x64",
-            "configuration": "MinSizeRel"
-        },
-        {
-            "name": "RelWithDebInfo",
-            "displayName": "Visual Studio Community 2022 Release - amd64 - RelWithDebInfo",
-            "configurePreset": "VSC2022-x64",
-            "configuration": "RelWithDebInfo"
-        }
     ]
 }

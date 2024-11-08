@@ -6,7 +6,6 @@ project(
   DESCRIPTION "project_description"
   LANGUAGES CXX)
 
-# Optionally set things like CMAKE_CXX_STANDARD, CMAKE_POSITION_INDEPENDENT_CODE here
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)

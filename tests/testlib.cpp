@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <test_lib/lib.hpp>
+#include <lib/lib.hpp>
 
 #define ASSERT_APPROX_EQUAL(a, b, epsilon) \
     if (std::fabs((a) - (b)) > (epsilon)) { \

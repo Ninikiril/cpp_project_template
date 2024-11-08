@@ -1,4 +1,4 @@
-#include <test_lib/lib.hpp>
+#include <lib/lib.hpp>
 
 float Q_rsqrt( float number )
 {

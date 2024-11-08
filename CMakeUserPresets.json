@@ -8,5 +8,51 @@
                 "VCPKG_ROOT": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/vcpkg"
             }
         }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug_build",
+            "displayName": "debug_build",
+            "configurePreset": "default",
+            "configuration": "Debug",
+            "targets": [
+                "app",
+                "lib",
+                "testlib"
+            ]
+        },
+        {
+            "name": "release_build",
+            "displayName": "release_build",
+            "configurePreset": "default",
+            "configuration": "Release",
+            "targets": [
+                "app",
+                "lib",
+                "testlib"
+            ]
+        },
+        {
+            "name": "debinfo_build",
+            "displayName": "debinfo_build",
+            "configurePreset": "default",
+            "configuration": "RelWithDebInfo",
+            "targets": [
+                "app",
+                "lib",
+                "testlib"
+            ]
+        },
+        {
+            "name": "minsize_build",
+            "displayName": "minsize_build",
+            "configurePreset": "default",
+            "configuration": "MinSizeRel",
+            "targets": [
+                "app",
+                "lib",
+                "testlib"
+            ]
+        }
     ]
 }
