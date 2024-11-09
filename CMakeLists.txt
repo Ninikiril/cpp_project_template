@@ -13,13 +13,13 @@ include(CTest)
 
 find_package(Doxygen)
 if(Doxygen_FOUND)
+  message(STATUS "Doxygen found, building docs")
   add_subdirectory(docs)
 else()
   message(STATUS "Doxygen not found, not building docs")
 endif()
 
-add_subdirectory(src)
+add_subdirectory(src/lib)
+add_subdirectory(tests/lib)
 
-add_subdirectory(apps)
-
-add_subdirectory(tests)
+add_subdirectory(apps/app)

@@ -1,1 +1,1 @@
-# Documentation To Do {#mainpage}
+# Cpp project template {#mainpage}

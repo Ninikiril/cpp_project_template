@@ -53,6 +53,15 @@
                 "lib",
                 "testlib"
             ]
+        },
+        {
+            "name": "docs_build",
+            "displayName": "docs_build",
+            "configurePreset": "default",
+            "configuration": "Release",
+            "targets": [
+                "docs"
+            ]
         }
     ]
 }
