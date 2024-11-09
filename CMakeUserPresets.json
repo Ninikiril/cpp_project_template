@@ -63,5 +63,35 @@
                 "docs"
             ]
         }
+    ],
+    "testPresets": [
+        {
+            "name": "debug_test",
+            "description": "",
+            "displayName": "debug_test",
+            "configurePreset": "default",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release_test",
+            "description": "",
+            "displayName": "release_test",
+            "configurePreset": "default",
+            "configuration": "Release"
+        },
+        {
+            "name": "debinfo_test",
+            "description": "",
+            "displayName": "debinfo_test",
+            "configurePreset": "default",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "minsize_test",
+            "description": "",
+            "displayName": "minsize_test",
+            "configurePreset": "default",
+            "configuration": "MinSizeRel"
+        }
     ]
 }
