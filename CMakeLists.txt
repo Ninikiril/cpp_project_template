@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.15...3.30)
+cmake_minimum_required(VERSION 3.21)
 
 project(
   cpp_project_name
   VERSION 0.1
   DESCRIPTION "project_description"
-  LANGUAGES CXX)
+  LANGUAGES CUDA CXX)
 
 set(CMAKE_CXX_EXTENSIONS OFF)
 
