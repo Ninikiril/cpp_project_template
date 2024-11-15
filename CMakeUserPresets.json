@@ -3,12 +3,13 @@
     "configurePresets": [
         {
             "name": "default",
-            "inherits": "VSC2022-x64",
+            "inherits": "conf-windows",
+            "generator": "Visual Studio 17 2022",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows",
-                "CMAKE_C_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe",
-                "CMAKE_CXX_COMPILER": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
                 "CMAKE_CUDA_COMPILER": "C:/Users/Name/NVIDIA_Toolkit/CUDA/bin/nvcc.exe"
             },
             "environment": {

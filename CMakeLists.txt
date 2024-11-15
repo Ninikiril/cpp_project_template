@@ -6,11 +6,10 @@ project(
   DESCRIPTION "project_description"
   LANGUAGES CUDA CXX)
 
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+# testing
 include(CTest)
 
+# generating docs with doxygen
 find_package(Doxygen)
 if(Doxygen_FOUND)
   message(STATUS "Doxygen found, building docs")
@@ -19,7 +18,9 @@ else()
   message(STATUS "Doxygen not found, not building docs")
 endif()
 
+# subdirectories for the project libs
 add_subdirectory(src/lib)
 add_subdirectory(tests/lib)
 
+# subdirectories for the project apps
 add_subdirectory(apps/app)

@@ -1,5 +1,4 @@
 {
-    "cmake.generator": "Ninja",
     "cmake.configureOnEdit": true,
     "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.buildDirectory": "${workspaceFolder}/out/build/",
