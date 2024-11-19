@@ -1,8 +1,8 @@
 {
-    "version": 3,
+    "version": 8,
     "configurePresets": [
         {
-            "name": "default",
+            "name": "default-config",
             "inherits": "conf-windows",
             "generator": "Ninja Multi-Config",
             "cacheVariables": {
@@ -19,42 +19,34 @@
     ],
     "buildPresets": [
         {
-            "name": "debug_build",
-            "displayName": "debug_build",
-            "configurePreset": "default",
-            "configuration": "Debug",
+            "name": "common_build",
+            "configurePreset": "default-config",
             "targets": [
-                "app",
-                "lib",
-                "testlib"
-            ]
+                "app_name",
+                "lib_name",
+                "testlib_name"
+            ],
+            "jobs": 6,
+            "hidden": true
         },
         {
             "name": "release_build",
-            "displayName": "release_build",
-            "configurePreset": "default",
-            "configuration": "Release",
-            "targets": [
-                "app",
-                "lib",
-                "testlib"
-            ]
+            "inherits": "common_build",
+            "configuration": "Release"
+        },
+        {
+            "name": "debug_build",
+            "inherits": "common_build",
+            "configuration": "Debug"
         },
         {
             "name": "debinfo_build",
-            "displayName": "debinfo_build",
-            "configurePreset": "default",
-            "configuration": "RelWithDebInfo",
-            "targets": [
-                "app",
-                "lib",
-                "testlib"
-            ]
+            "inherits": "common_build",
+            "configuration": "RelWithDebInfo"
         },
         {
             "name": "docs_build",
-            "displayName": "docs_build",
-            "configurePreset": "default",
+            "configurePreset": "default-config",
             "configuration": "Release",
             "targets": [
                 "docs"
@@ -63,32 +55,47 @@
     ],
     "testPresets": [
         {
-            "name": "debug_test",
-            "description": "",
-            "displayName": "debug_test",
-            "configurePreset": "default",
-            "configuration": "Debug"
+            "name": "common_test",
+            "configurePreset": "default-config",
+            "hidden": true,
+            "output": {
+                "outputLogFile": "test_output.log",
+                "outputJUnitFile": "test_output.xml"
+            }
         },
         {
             "name": "release_test",
-            "description": "",
-            "displayName": "release_test",
-            "configurePreset": "default",
+            "inherits": "common_test",
             "configuration": "Release"
         },
         {
-            "name": "debinfo_test",
-            "description": "",
-            "displayName": "debinfo_test",
-            "configurePreset": "default",
-            "configuration": "RelWithDebInfo"
+            "name": "debug_test",
+            "inherits": "common_test",
+            "configuration": "Debug"
         },
         {
-            "name": "minsize_test",
-            "description": "",
-            "displayName": "minsize_test",
-            "configurePreset": "default",
-            "configuration": "MinSizeRel"
+            "name": "debinfo_test",
+            "inherits": "common_test",
+            "configuration": "RelWithDebInfo"
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "default-package",
+            "description": "default-package",
+            "displayName": "default-package",
+            "configurePreset": "default-config",
+            "generators": [
+                "TGZ"
+            ],
+            "configurations": [
+                "release_build"
+            ],
+            "output": {
+                "debug": false,
+                "verbose": false
+            },
+            "packageDirectory": "../install/"
         }
     ]
 }

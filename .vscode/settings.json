@@ -1,13 +1,6 @@
 {
     "cmake.configureOnEdit": true,
     "cmake.sourceDirectory": "${workspaceFolder}",
-    "cmake.buildDirectory": "${workspaceFolder}/out/build/",
-    "cmake.installPrefix": "${workspaceFolder}/out/install/",
-    "cmake.buildArgs": [],
-    "cmake.ctestArgs": [],
-    "cmake.cpackArgs": [],
-    "cmake.parallelJobs": 6,
-    "cmake.loggingLevel": "info",
     "cmake.useCMakePresets": "always",
     "files.associations": {
         "algorithm": "cpp",

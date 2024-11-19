@@ -1,5 +1,5 @@
 {
-    "version": 3,
+    "version": 8,
     "cmakeMinimumRequired": {
         "major": 3,
         "minor": 21,
@@ -10,8 +10,8 @@
             "name": "conf-common",
             "description": "General settings that apply to all configurations",
             "hidden": true,
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}"
+            "binaryDir": "${sourceDir}/out/build/",
+            "installDir": "${sourceDir}/out/install/"
         },
         {
             "name": "conf-windows",
