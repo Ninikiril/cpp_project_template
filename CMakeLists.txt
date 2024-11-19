@@ -9,6 +9,9 @@ project(
 # testing
 include(CTest)
 
+# for SONAR LINT
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # generating docs with doxygen
 find_package(Doxygen)
 if(Doxygen_FOUND)
