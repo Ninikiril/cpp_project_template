@@ -4,7 +4,7 @@
         {
             "name": "default",
             "inherits": "conf-windows",
-            "generator": "Ninja",
+            "generator": "Ninja Multi-Config",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows",
@@ -45,17 +45,6 @@
             "displayName": "debinfo_build",
             "configurePreset": "default",
             "configuration": "RelWithDebInfo",
-            "targets": [
-                "app",
-                "lib",
-                "testlib"
-            ]
-        },
-        {
-            "name": "minsize_build",
-            "displayName": "minsize_build",
-            "configurePreset": "default",
-            "configuration": "MinSizeRel",
             "targets": [
                 "app",
                 "lib",
