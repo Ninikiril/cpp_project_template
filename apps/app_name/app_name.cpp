@@ -1,4 +1,4 @@
-#include <lib_name/lib_name.hpp>
+#include <lib_name/lib_name.h>
 
 int main() {
     return 0;

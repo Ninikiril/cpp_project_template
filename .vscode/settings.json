@@ -91,4 +91,7 @@
         "xtree": "cpp",
         "xutility": "cpp"
     },
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}\\out\\build\\compile_commands.json",
+    "sonarlint.focusOnNewCode": false,
+    "sonarlint.disableTelemetry": true
 }

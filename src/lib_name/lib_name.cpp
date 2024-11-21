@@ -1,5 +1,11 @@
-#include <lib_name/lib_name.hpp>
+#include <lib_name/lib_name.h>
 
-bool f_example(float a) {
-	return a > 0;
+namespace libname
+{
+
+bool functionNameF(const Real realV)
+{
+    return realV > 0.0f;
 }
+
+} // namespace libname

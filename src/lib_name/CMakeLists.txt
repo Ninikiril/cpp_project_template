@@ -1,4 +1,4 @@
-set(HEADER_LIST "${PROJECT_SOURCE_DIR}/include/lib_name/lib_name.hpp")
+set(HEADER_LIST "${PROJECT_SOURCE_DIR}/include/lib_name/lib_name.h")
 
 add_library(lib_name lib_name.cpp ${HEADER_LIST})
 install(TARGETS lib_name ARCHIVE DESTINATION lib COMPONENT libraries)
