@@ -1,11 +1,8 @@
-#include <lib_name/lib_name.h>
+#include "lib_name/lib_name.h"
 
-namespace libname
-{
-
+namespace lib_name{
 bool functionNameF(const Real realV)
 {
     return realV > 0.0f;
 }
-
-} // namespace libname
+} // namespace lib_name
