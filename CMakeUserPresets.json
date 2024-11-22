@@ -19,43 +19,86 @@
     ],
     "buildPresets": [
         {
-            "name": "common_build",
+            "name": "common-build",
             "configurePreset": "default-config",
-            "targets": [
-                "app_name",
-                "lib_name",
-                "testlib_name"
-            ],
             "jobs": 6,
             "hidden": true
         },
         {
-            "name": "release_build",
-            "inherits": "common_build",
-            "configuration": "Release"
+            "name": "release-build",
+            "inherits": "common-build",
+            "configuration": "Release",
+            "hidden": true
         },
         {
-            "name": "debug_build",
-            "inherits": "common_build",
-            "configuration": "Debug"
+            "name": "debug-build",
+            "inherits": "common-build",
+            "configuration": "Debug",
+            "hidden": true
         },
         {
-            "name": "debinfo_build",
-            "inherits": "common_build",
-            "configuration": "RelWithDebInfo"
+            "name": "debinfo-build",
+            "inherits": "common-build",
+            "configuration": "RelWithDebInfo",
+            "hidden": true
         },
         {
-            "name": "docs_build",
+            "name": "docs-build",
             "configurePreset": "default-config",
             "configuration": "Release",
             "targets": [
                 "docs"
             ]
+        },
+        {
+            "name": "lib_name-release-build",
+            "inherits": "release-build",
+            "targets": [
+                "lib_name",
+                "test_lib_name"
+            ]
+        },
+        {
+            "name": "lib_name-debug-build",
+            "inherits": "debug-build",
+            "targets": [
+                "lib_name",
+                "test_lib_name"
+            ]
+        },
+        {
+            "name": "lib_name-debinfo-build",
+            "inherits": "debinfo-build",
+            "targets": [
+                "lib_name",
+                "test_lib_name"
+            ]
+        },
+        {
+            "name": "app_name-release-build",
+            "inherits": "release-build",
+            "targets": [
+                "app_name"
+            ]
+        },
+        {
+            "name": "app_name-debug-build",
+            "inherits": "debug-build",
+            "targets": [
+                "app_name"
+            ]
+        },
+        {
+            "name": "app_name-debinfo-build",
+            "inherits": "debinfo-build",
+            "targets": [
+                "app_name"
+            ]
         }
     ],
     "testPresets": [
         {
-            "name": "common_test",
+            "name": "common-test",
             "configurePreset": "default-config",
             "hidden": true,
             "output": {
@@ -64,18 +107,18 @@
             }
         },
         {
-            "name": "release_test",
-            "inherits": "common_test",
+            "name": "release-test",
+            "inherits": "common-test",
             "configuration": "Release"
         },
         {
-            "name": "debug_test",
-            "inherits": "common_test",
+            "name": "debug-test",
+            "inherits": "common-test",
             "configuration": "Debug"
         },
         {
-            "name": "debinfo_test",
-            "inherits": "common_test",
+            "name": "debinfo-test",
+            "inherits": "common-test",
             "configuration": "RelWithDebInfo"
         }
     ],
@@ -88,14 +131,19 @@
             "generators": [
                 "TGZ"
             ],
-            "configurations": [
-                "release_build"
-            ],
             "output": {
                 "debug": false,
                 "verbose": false
             },
-            "packageDirectory": "../install/"
+            "packageDirectory": "../install/",
+            "hidden": true
+        },
+        {
+            "name": "lib_name-package",
+            "inherits": "default-package",
+            "configurations": [
+                "lib_name-release-build"
+            ]
         }
     ]
 }
