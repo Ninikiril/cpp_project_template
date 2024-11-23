@@ -51,48 +51,27 @@
             ]
         },
         {
-            "name": "lib_name-release-build",
+            "name": "toto-release-build",
             "inherits": "release-build",
             "targets": [
-                "lib_name",
-                "test_lib_name"
+                "toto",
+                "test_toto"
             ]
         },
         {
-            "name": "lib_name-debug-build",
+            "name": "toto-debug-build",
             "inherits": "debug-build",
             "targets": [
-                "lib_name",
-                "test_lib_name"
+                "toto",
+                "test_toto"
             ]
         },
         {
-            "name": "lib_name-debinfo-build",
+            "name": "toto-debinfo-build",
             "inherits": "debinfo-build",
             "targets": [
-                "lib_name",
-                "test_lib_name"
-            ]
-        },
-        {
-            "name": "app_name-release-build",
-            "inherits": "release-build",
-            "targets": [
-                "app_name"
-            ]
-        },
-        {
-            "name": "app_name-debug-build",
-            "inherits": "debug-build",
-            "targets": [
-                "app_name"
-            ]
-        },
-        {
-            "name": "app_name-debinfo-build",
-            "inherits": "debinfo-build",
-            "targets": [
-                "app_name"
+                "toto",
+                "test_toto"
             ]
         }
     ],
@@ -139,10 +118,10 @@
             "hidden": true
         },
         {
-            "name": "lib_name-package",
+            "name": "toto-package",
             "inherits": "default-package",
             "configurations": [
-                "lib_name-release-build"
+                "toto-release-build"
             ]
         }
     ]

@@ -1,0 +1,16 @@
+{
+    "lib_count": 0,
+    "libs": [
+        "toto"
+    ],
+    "app_count": 0,
+    "apps": [
+        {
+            "name": "tata",
+            "lib_count": 0,
+            "libs": [
+                "toto"
+            ]
+        }
+    ]
+}

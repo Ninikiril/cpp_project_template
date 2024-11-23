@@ -1,6 +1,7 @@
 """ Create the directory structure for a library """
 import json
 import os
+from common import PROJECT_DATA_PATH
 
 def add_lib_to_project(lib_name: str) -> None:
     """ Create the directory structure for a library """
@@ -69,70 +70,16 @@ def add_lib_to_project(lib_name: str) -> None:
 
     print(f"Library structure for '{lib_name}' created successfully.")
 
-    # Add the library to the main CMakeLists.txt
-    with open("CMakeLists.txt", 'a') as file:
-        file.write(f"\n# subdirectories for {lib_name}\n")
-        file.write(f"add_subdirectory(src/{lib_name})\n")
-        file.write(f"add_subdirectory(tests/{lib_name})\n")
+    # Add the library to libs.json file in json/
+    with open(PROJECT_DATA_PATH, 'r') as file:
+        project_data = json.load(file)
+    project_data["lib_count"] += 1
+    project_data["libs"].append(lib_name)
+    with open(PROJECT_DATA_PATH, 'w') as file:
+        json.dump(project_data, file, indent=4)
 
     print(f"Library '{lib_name}' added to the project.")
-
-def add_build_config_and_packaging(lib_name: str) -> None:
-    """ Add the build configuration for the CMakeUserPresets.json file """
-    # Add build presets for the new library
-    build_presets = [
-        {
-            "name": f"{lib_name}-release-build",
-            "inherits": "release-build",
-            "targets": [
-                lib_name,
-                f"test_{lib_name}"
-            ]
-        },
-        {
-            "name": f"{lib_name}-debug-build",
-            "inherits": "debug-build",
-            "targets": [
-                lib_name,
-                f"test_{lib_name}"
-            ]
-        },
-        {
-            "name": f"{lib_name}-debinfo-build",
-            "inherits": "debinfo-build",
-            "targets": [
-                lib_name,
-                f"test_{lib_name}"
-            ]
-        }
-    ]
-
-    # Add package presets for the new library
-    package_presets = [
-        {
-            "name": f"{lib_name}-package",
-            "inherits": "default-package",
-            "configurations": [
-                f"{lib_name}-release-build"
-            ]
-        }
-    ]
-
-    # Read the existing CMakeUserPresets.json file
-    with open("CMakeUserPresets.json", 'r') as file:
-        cmake_presets = json.load(file)
-
-    # Add the new build and package presets
-    cmake_presets["buildPresets"].extend(build_presets)
-    cmake_presets["packagePresets"].extend(package_presets)
-
-    # Write the updated CMakeUserPresets.json file
-    with open("CMakeUserPresets.json", 'w') as file:
-        json.dump(cmake_presets, file, indent=4)
-
-    print(f"Build configuration and packaging for '{lib_name}' added successfully.")
 
 if __name__ == "__main__":
     lib_name = input("Enter the name of the library: ")
     add_lib_to_project(lib_name)
-    add_build_config_and_packaging(lib_name)

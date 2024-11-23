@@ -1,6 +1,6 @@
 #pragma once
 
-namespace lib_name {
+namespace toto {
 /// @brief Example function
 ///
 /// @details This function is an example of a function. It returns true if a is
@@ -13,4 +13,4 @@ namespace lib_name {
 using Real = float;
 
 bool functionNameF(const Real realV);
-} // namespace lib_name
+} // namespace toto
