@@ -1,40 +1,4 @@
 {
     "configurations": [
-        {
-            "name": "Debug toto tests",
-            "program": "${workspaceFolder}/out/build/tests/toto/Debug/test_toto.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build test_toto"
-        },
-        {
-            "name": "Release toto tests",
-            "program": "${workspaceFolder}/out/build/tests/toto/Release/test_toto.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build test_toto"
-        }
     ]
 }
