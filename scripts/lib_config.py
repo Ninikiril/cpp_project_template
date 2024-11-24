@@ -118,40 +118,26 @@ def set_launch_config(lib_name: str) -> None:
     }
     # Set the new launch configurations
     data["configurations"].append({
-        "name": f"Debug {lib_name} tests",
-        "program": f"${{workspaceFolder}}/out/build/tests/{lib_name}/Debug/test_{lib_name}.exe",
-        "args": [],
-        "stopAtEntry": False,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": False,
-        "MIMode": "gdb",
-        "setupCommands": [
-            {
-                "description": "Enable pretty-printing for gdb",
-                "text": "-enable-pretty-printing",
-                "ignoreFailures": True
-            }
-        ],
-        "preLaunchTask": f"build test_{lib_name}"
-    })
-    data["configurations"].append({
-        "name": f"Release {lib_name} tests",
+        "name": f"Release {lib_name}",
+        "type": "cppvsdbg",
+        "request": "launch",
         "program": f"${{workspaceFolder}}/out/build/tests/{lib_name}/Release/test_{lib_name}.exe",
         "args": [],
         "stopAtEntry": False,
         "cwd": "${workspaceFolder}",
         "environment": [],
-        "externalConsole": False,
-        "MIMode": "gdb",
-        "setupCommands": [
-            {
-                "description": "Enable pretty-printing for gdb",
-                "text": "-enable-pretty-printing",
-                "ignoreFailures": True
-            }
-        ],
-        "preLaunchTask": f"build test_{lib_name}"
+        "console": "internalConsole"
+    })
+    data["configurations"].append({
+        "name": f"Debug {lib_name}",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": f"${{workspaceFolder}}/out/build/tests/{lib_name}/Debug/test_{lib_name}.exe",
+        "args": [],
+        "stopAtEntry": False,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "console": "internalConsole"
     })
 
     # Write the updated launch.json file
