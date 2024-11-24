@@ -49,30 +49,6 @@
             "targets": [
                 "docs"
             ]
-        },
-        {
-            "name": "toto-release-build",
-            "inherits": "release-build",
-            "targets": [
-                "toto",
-                "test_toto"
-            ]
-        },
-        {
-            "name": "toto-debug-build",
-            "inherits": "debug-build",
-            "targets": [
-                "toto",
-                "test_toto"
-            ]
-        },
-        {
-            "name": "toto-debinfo-build",
-            "inherits": "debinfo-build",
-            "targets": [
-                "toto",
-                "test_toto"
-            ]
         }
     ],
     "testPresets": [
@@ -116,13 +92,6 @@
             },
             "packageDirectory": "../install/",
             "hidden": true
-        },
-        {
-            "name": "toto-package",
-            "inherits": "default-package",
-            "configurations": [
-                "toto-release-build"
-            ]
         }
     ]
 }
