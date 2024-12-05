@@ -50,19 +50,21 @@ def add_lib_to_project(lib_name: str) -> None:
 
     # CMakelists.txt
     with open(f"src/{lib_name}/CMakeLists.txt", 'w') as file:
-        file.write(f'set(HEADER_LIST "${{PROJECT_SOURCE_DIR}}/include/{lib_name}/{lib_name}.h")\n\n')
-        file.write(f'add_library({lib_name} {lib_name}.cpp ${{HEADER_LIST}})\n')
+        file.write('AUX_SOURCE_DIRECTORY(. DIR_LIB_SRCS)\n')
+        file.write(f'AUX_SOURCE_DIRECTORY(${{PROJECT_SOURCE_DIR}}/include/{lib_name} DIR_LIB_HEADERS)\n')
+        file.write(f'add_library({lib_name} ${{DIR_LIB_SRCS}} ${{DIR_LIB_HEADERS}})\n')
         file.write(f'install(TARGETS {lib_name} ARCHIVE DESTINATION lib COMPONENT {lib_name}_libs)\n')
-        file.write(f'install(FILES ${{HEADER_LIST}} DESTINATION include COMPONENT {lib_name}_headers)\n\n')
+        file.write(f'install(FILES ${{DIR_LIB_HEADERS}} DESTINATION include COMPONENT {lib_name}_headers)\n\n')
         file.write(f'target_include_directories({lib_name} PUBLIC ${{PROJECT_SOURCE_DIR}}/include)\n\n')
         file.write(f'target_compile_features({lib_name} PUBLIC cxx_std_11)\n\n')
         file.write('source_group(\n')
         file.write('  TREE "${PROJECT_SOURCE_DIR}/include"\n')
         file.write('  PREFIX "Header Files"\n')
-        file.write('  FILES ${HEADER_LIST})\n')
+        file.write('  FILES ${DIR_LIB_HEADERS})\n')
 
     with open(f"tests/{lib_name}/CMakeLists.txt", 'w') as file:
-        file.write(f'add_executable(test_{lib_name} test_{lib_name}.cpp)\n\n')
+        file.write('AUX_SOURCE_DIRECTORY(. DIR_LIB_TESTS)\n')
+        file.write(f'add_executable(test_{lib_name} ${{DIR_LIB_TESTS}})\n\n')
         file.write('find_package(Catch2 3 REQUIRED)\n\n')
         file.write(f'target_compile_features(test_{lib_name} PRIVATE cxx_std_17)\n\n')
         file.write(f'target_link_libraries(test_{lib_name} PRIVATE {lib_name} Catch2::Catch2WithMain)\n\n')
