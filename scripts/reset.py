@@ -109,7 +109,7 @@ files_to_reset = {
     "launch.json": {
         "configurations": []
     },
-    "project_data.json": {
+    "json/project_data.json": {
         "lib_count": -1,
         "libs": [],
         "app_count": -1,
