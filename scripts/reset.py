@@ -5,9 +5,8 @@ import shutil
 import json
 
 # Define paths
-base_path = "C:/Users/Name/repositories/cpp_project_template"
-out_path = os.path.join(base_path, "out")
-folders_to_clear = ["apps", "include", "src", "tests"]
+out_path = "out/"
+folders_to_clear = ["apps/", "include/", "src/", "tests/"]
 files_to_reset = {
     "CMakeUserPresets.json": {
         "version": 8,
@@ -106,7 +105,7 @@ files_to_reset = {
             }
         ]
     },
-    "launch.json": {
+    ".vscode/launch.json": {
         "configurations": []
     },
     "json/project_data.json": {
@@ -123,10 +122,9 @@ if os.path.exists(out_path):
 
 # Delete everything inside specified folders
 for folder in folders_to_clear:
-    folder_path = os.path.join(base_path, folder)
-    if os.path.exists(folder_path):
-        for filename in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, filename)
+    if os.path.exists(folder):
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
             if os.path.isfile(file_path) or os.path.islink(file_path):
                 os.unlink(file_path)
             elif os.path.isdir(file_path):
@@ -134,6 +132,6 @@ for folder in folders_to_clear:
 
 # Reinitialize JSON files
 for filename, content in files_to_reset.items():
-    file_path = os.path.join(base_path, filename)
+    file_path = filename
     with open(file_path, 'w') as json_file:
         json.dump(content, json_file, indent=4)
