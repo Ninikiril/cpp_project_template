@@ -11,13 +11,11 @@ def lib_in_project(lib_name: str) -> bool:
 def set_build_config_and_packaging(lib_name: str) -> None:
     """ set the build configuration for the CMakeUserPresets.json file """
     build_presets = create_build_presets(lib_name)
-    package_presets = create_package_presets(lib_name)
 
     # Write the CMakeUserPresets.json file
     with open("CMakeUserPresets.json", 'r') as file:
         cmake_presets = json.load(file)
     cmake_presets["buildPresets"] = build_presets
-    cmake_presets["packagePresets"] = package_presets
     with open("CMakeUserPresets.json", 'w') as file:
         json.dump(cmake_presets, file, indent=4)
 
@@ -80,33 +78,6 @@ def create_build_presets(lib_name: str) -> list[dict[str, any]]:
             "targets": [
                 lib_name,
                 f"test_{lib_name}"
-            ]
-        }
-    ]
-
-def create_package_presets(lib_name: str) -> list[dict[str, any]]:
-    """ Create package presets for the new library """
-    return [
-        {
-            "name": "default-package",
-            "description": "default-package",
-            "displayName": "default-package",
-            "configurePreset": "default-config",
-            "generators": [
-                "TGZ"
-            ],
-            "output": {
-                "debug": False,
-                "verbose": False
-            },
-            "packageDirectory": "../install/",
-            "hidden": True
-        },
-        {
-            "name": f"{lib_name}-package",
-            "inherits": "default-package",
-            "configurations": [
-                f"{lib_name}-release-build"
             ]
         }
     ]

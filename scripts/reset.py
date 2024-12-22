@@ -86,23 +86,6 @@ files_to_reset = {
                 "inherits": "common-test",
                 "configuration": "RelWithDebInfo"
             }
-        ],
-        "packagePresets": [
-            {
-                "name": "default-package",
-                "description": "default-package",
-                "displayName": "default-package",
-                "configurePreset": "default-config",
-                "generators": [
-                    "TGZ"
-                ],
-                "output": {
-                    "debug": False,
-                    "verbose": False
-                },
-                "packageDirectory": "../install/",
-                "hidden": True
-            }
         ]
     },
     ".vscode/launch.json": {

@@ -27,7 +27,6 @@ def create_app_structure(app_name: str, libs: list[str]) -> None:
     with open(f"apps/{app_name}/CMakeLists.txt", 'w') as file:
         file.write('AUX_SOURCE_DIRECTORY(. DIR_LIB_SRCS)\n')
         file.write(f'add_executable({app_name} ${{DIR_LIB_SRCS}})\n')
-        file.write(f'install(TARGETS {app_name} RUNTIME DESTINATION bin COMPONENT {app_name}_apps)\n\n')
         file.write(f'target_compile_features({app_name} PRIVATE cxx_std_17)\n\n')
         libs_string = ' '.join(libs)
         file.write(f'target_link_libraries({app_name} PRIVATE {libs_string})\n')
