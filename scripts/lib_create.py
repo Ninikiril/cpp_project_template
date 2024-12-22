@@ -53,8 +53,6 @@ def add_lib_to_project(lib_name: str) -> None:
         file.write('AUX_SOURCE_DIRECTORY(. DIR_LIB_SRCS)\n')
         file.write(f'AUX_SOURCE_DIRECTORY(${{PROJECT_SOURCE_DIR}}/include/{lib_name} DIR_LIB_HEADERS)\n')
         file.write(f'add_library({lib_name} ${{DIR_LIB_SRCS}} ${{DIR_LIB_HEADERS}})\n')
-        file.write(f'install(TARGETS {lib_name} ARCHIVE DESTINATION lib COMPONENT {lib_name}_libs)\n')
-        file.write(f'install(FILES ${{DIR_LIB_HEADERS}} DESTINATION include COMPONENT {lib_name}_headers)\n\n')
         file.write(f'target_include_directories({lib_name} PUBLIC ${{PROJECT_SOURCE_DIR}}/include)\n\n')
         file.write(f'target_compile_features({lib_name} PUBLIC cxx_std_11)\n\n')
         file.write('source_group(\n')

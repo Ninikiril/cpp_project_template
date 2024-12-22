@@ -24,13 +24,11 @@ def get_libs(app_name: str) -> list[str]:
 def set_build_config_and_packaging(app_name: str, libs: list[str]) -> None:
     """ Set the build configuration for the CMakeUserPresets.json file """
     build_presets = create_build_presets(app_name, libs)
-    package_presets = create_package_presets(app_name)
 
     # Write the CMakeUserPresets.json file
     with open("CMakeUserPresets.json", 'r') as file:
         cmake_presets = json.load(file)
     cmake_presets["buildPresets"] = build_presets
-    cmake_presets["packagePresets"] = package_presets
     with open("CMakeUserPresets.json", 'w') as file:
         json.dump(cmake_presets, file, indent=4)
 
@@ -96,33 +94,6 @@ def create_build_presets(app_name: str, libs: list[str]) -> list[dict[str, any]]
                 app_name,
                 *libs,
                 *[f"test_{lib}" for lib in libs]
-            ]
-        }
-    ]
-
-def create_package_presets(app_name: str) -> list[dict[str, any]]:
-    """ Create package presets for the new application """
-    return [
-        {
-            "name": "default-package",
-            "description": "default-package",
-            "displayName": "default-package",
-            "configurePreset": "default-config",
-            "generators": [
-                "TGZ"
-            ],
-            "output": {
-                "debug": False,
-                "verbose": False
-            },
-            "packageDirectory": "../install/",
-            "hidden": True
-        },
-        {
-            "name": f"{app_name}-package",
-            "inherits": "default-package",
-            "configurations": [
-                f"{app_name}-release-build"
             ]
         }
     ]

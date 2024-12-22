@@ -8,6 +8,8 @@ This repository provides a template for C++ projects using Visual Studio Code, V
 - [Vcpkg](https://github.com/microsoft/vcpkg)
 - [Doxygen](http://www.doxygen.nl/)
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/vs/community/)
+- [NSIS](https://nsis.sourceforge.io/Download)
+- [Python](https://www.python.org/)
 
 ## Getting Started
 
@@ -25,6 +27,8 @@ Install vscode and add the following extensions:
 ### Install Dependencies
 
 Install doxygen
+Install NSIS and add it to PATH
+Install python 3 and add it to PATH
 
 ### Clone the Repository
 
@@ -60,7 +64,7 @@ In CMakeUserPresets.json there must be a config named "default-config" for the s
 
 ### scripts
 
-you might want to change reset.py script to set presets json files to what they are right now
+you might want to change reset.py script to set presets json files to what they are right now (after your changes)
 
 use lib_create to add lib, lib_config to config the workflow and lib_delete to delete lib
 same for app
@@ -89,3 +93,5 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE V3. See the [LICEN
 - [Vcpkg](https://github.com/microsoft/vcpkg)
 - [Doxygen](http://www.doxygen.nl/)
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/vs/community/)
+- [NSIS](https://nsis.sourceforge.io/Download)
+- [Python](https://www.python.org/)
